@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unlit_02_02ToonShader
-  m_Shader: {fileID: 4800000, guid: 0ba80177ae9242c4e838897d364b1d51, type: 3}
+  m_Name: Unlit_02_03RimLight
+  m_Shader: {fileID: 4800000, guid: 202aff43d1f804349a74b47a54d2060c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -27,25 +27,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Feather: 0.0329
-    - _OutlineWidth: 0.0062
-    - _ShadowTint: 0.456
-    - _SpecIntensity: 1.54
-    - _SpecPower: 103.5
-    - _SpecThreshold: 0.121
-    - _Threshold: 0.241
+    - _BacksideOnly: 0
+    - _HardEdge: 0
+    - _RimFeather: 0.185
+    - _RimIntensity: 1.54
+    - _RimPower: 2.81
+    - _RimWidth: 0.564
     m_Colors:
-    - _BaseColor: {r: 0, g: 0.67487186, b: 0.76729554, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShadowColor: {r: 0.9748427, g: 0.9748427, b: 0.9748427, a: 1}
-    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ToonSpecColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.44025147, g: 0.44025147, b: 0.44025147, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
