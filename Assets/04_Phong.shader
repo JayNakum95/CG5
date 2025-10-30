@@ -3,10 +3,12 @@ Shader "Unlit/04_Phong"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _MainTex_ST ("Tiling (X,Y) and Offset (Z,W)", Vector) = (1,1,0,0)
         _Color ("Base Color", Color) = (1,1,1,1)
         _AmbientStrength ("Ambient Strength", Range(0,1)) = 0.3
         _SpecularPower ("Specular Power", Range(1,128)) = 32
     }
+
     SubShader
     {
         Tags { "RenderType"="Opaque" }
@@ -21,6 +23,7 @@ Shader "Unlit/04_Phong"
             #include "UnityCG.cginc"
 
             sampler2D _MainTex;
+            float4 _MainTex_ST; // XY = tiling, ZW = offset
             fixed4 _Color;
             float _AmbientStrength;
             float _SpecularPower;
@@ -47,7 +50,9 @@ Shader "Unlit/04_Phong"
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
                 o.normal = normalize(mul((float3x3)unity_ObjectToWorld, v.normal));
-                o.uv = v.uv;
+
+                // Apply tiling and offset
+                o.uv = v.uv * _MainTex_ST.xy + _MainTex_ST.zw;
                 return o;
             }
 
@@ -58,13 +63,13 @@ Shader "Unlit/04_Phong"
                 float3 V = normalize(_WorldSpaceCameraPos.xyz - i.worldPos);
                 float3 R = reflect(-L, N);
 
-                fixed4 ambient = _Color * _AmbientStrength * _LightColor0;
+                fixed4 ambient = _Color * _AmbientStrength;
 
                 float diff = saturate(dot(N, L));
-                fixed4 diffuse = _Color * diff * _LightColor0;
+                fixed4 diffuse = _Color * diff;
 
                 float spec = pow(saturate(dot(R, V)), _SpecularPower);
-                fixed4 specular = spec * _LightColor0;
+                fixed4 specular = spec;
 
                 fixed4 texColor = tex2D(_MainTex, i.uv);
 
