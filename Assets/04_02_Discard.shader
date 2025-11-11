@@ -18,6 +18,7 @@ Shader "Unlit/04_02_Discard"
             "IgnoreProjector"="True"
         }
 
+
         LOD 100
         Cull Back
         ZWrite On
