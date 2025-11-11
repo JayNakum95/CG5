@@ -1,6 +1,6 @@
 
 
-Shader "Unlit/01_Simple"
+Shader "Unlit/04_01_Alpha"
 {
     Properties
     {
