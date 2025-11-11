@@ -1,9 +1,12 @@
+
+
 Shader "Unlit/01_Simple"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}   // texture slot
-        _Color ("Tint Color", Color) = (1, 1, 1, 1)  // color multiplier
+        _MainTex ("Texture", 2D) = "white" {}  
+        _Color ("Tint Color", Color) = (1, 1, 1, 1)  
+        _Alpha ("Alpha", Range(0,1)) = 1       
     }
 
     SubShader
@@ -23,6 +26,7 @@ Shader "Unlit/01_Simple"
             sampler2D _MainTex;
             float4 _MainTex_ST;     
             fixed4 _Color;
+            float _Alpha;
 
             struct appdata
             {
@@ -47,10 +51,11 @@ Shader "Unlit/01_Simple"
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 texColor = tex2D(_MainTex, i.uv);
-                return texColor * _Color;   
+                fixed3 rgb = texColor.rgb * _Color.rgb;
+                fixed alpha = texColor.a * _Color.a * _Alpha;
+                return fixed4(rgb, alpha);
             }
             ENDCG
         }
     }
 }
-
