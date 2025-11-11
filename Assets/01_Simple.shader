@@ -1,38 +1,56 @@
 Shader "Unlit/01_Simple"
 {
-     Properties{
-        _Color("Color", Color) = (1,0.25,0,1)    
-        // _AlphaValue ("AlphaValue", Float) = 0.8
-        // _WaveScale("WaveScale", Range(0.02,0.15)) = 0.07
-        // _ReflDistort("Reflection Distort", Range(0,1.5)) = 0.5
-        // _RefColor("Reflection Color", Color) = (0.34,0.85,0.92,1)
-        // _ReflectionTex("Environment Reflection",2D)=""{}
-        
-        }
+    Properties
+    {
+        _MainTex ("Texture", 2D) = "white" {}   // texture slot
+        _Color ("Tint Color", Color) = (1, 1, 1, 1)  // color multiplier
+    }
 
     SubShader
     {
-       
+        Tags { "Queue"="Transparent" "RenderType"="Transparent" }
+        Blend SrcAlpha OneMinusSrcAlpha
+        ZWrite Off
+        Cull Back
+
         Pass
         {
             CGPROGRAM
             #pragma vertex vert
-            #pragma fragment frag        
+            #pragma fragment frag
             #include "UnityCG.cginc"
-            fixed4 _Color;
-           float4 vert(float4 v : POSITION) : SV_POSITION{
-               float4 o;
-               o = UnityObjectToClipPos(v);
-               return o;           
-           }
 
-            
-            fixed4 frag (float4 i:SV_POSITION ) : SV_Target
+            sampler2D _MainTex;
+            float4 _MainTex_ST;     
+            fixed4 _Color;
+
+            struct appdata
             {
-                fixed4 o = _Color;
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+            };
+
+            struct v2f
+            {
+                float4 pos : SV_POSITION;
+                float2 uv : TEXCOORD0;
+            };
+
+            v2f vert (appdata v)
+            {
+                v2f o;
+                o.pos = UnityObjectToClipPos(v.vertex);
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 return o;
+            }
+
+            fixed4 frag (v2f i) : SV_Target
+            {
+                fixed4 texColor = tex2D(_MainTex, i.uv);
+                return texColor * _Color;   
             }
             ENDCG
         }
     }
 }
+
