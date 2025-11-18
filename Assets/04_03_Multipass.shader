@@ -14,7 +14,6 @@ Shader "Unlit/04_03_Multipass"
             "RenderType"="TransparentCutout"
         }
 
-        // ---------- shared program for both passes ----------
         CGINCLUDE
         #include "UnityCG.cginc"
 
@@ -42,25 +41,21 @@ Shader "Unlit/04_03_Multipass"
             return o;
         }
 
-        // Back-face color (cyan)
         fixed4 fragBack (v2f i) : SV_Target
         {
             fixed4 mask = tex2D(_MaskTex, i.uv);
-            clip(mask.r - _Dissolve);        // dissolve
-            return fixed4(0, 1, 1, 1);       // cyan
+            clip(mask.r - _Dissolve);        
+            return fixed4(0, 1, 1, 1);       
         }
 
-        // Front-face color (use mask texture = red stripes)
         fixed4 fragFront (v2f i) : SV_Target
         {
             fixed4 mask = tex2D(_MaskTex, i.uv);
             clip(mask.r - _Dissolve);        // dissolve
-            return mask;                     // red textured result
+            return mask;                    
         }
         ENDCG
-        // ---------- end shared program ----------
 
-        // 1st pass: draw back faces (cyan)
         Pass
         {
             Cull Front                  // draw back faces
@@ -70,7 +65,6 @@ Shader "Unlit/04_03_Multipass"
             ENDCG
         }
 
-        // 2nd pass: draw front faces (red)
         Pass
         {
             Cull Back                   // draw front faces
