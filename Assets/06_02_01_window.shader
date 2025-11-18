@@ -2,34 +2,31 @@ Shader "Unlit/06_02_01_window"
 {
     Properties
     {
-        _Color ("Debug Color (optional)", Color) = (1,1,1,0.1)
+        _Color ("Tint Color", Color) = (1,1,1,0.2)
     }
 
     SubShader
     {
-        // draw with normal geometry timing
-        Tags { "RenderType"="Opaque" "Queue"="Geometry" }
+        Tags { "RenderType"="Transparent" "Queue"="Geometry" }
 
         Pass
         {
-            // Write 1 into stencil wherever the cube is
             Stencil
             {
-                Ref 1          // value to write
-                Comp Always    // always pass
-                Pass Replace   // write Ref into stencil
+                Ref 1
+                Comp Always
+                Pass Replace
             }
 
-            // write depth, but not color (cube itself invisible)
             ZWrite On
-            ColorMask 0
+            Blend SrcAlpha OneMinusSrcAlpha   
 
             CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
             #include "UnityCG.cginc"
 
-            fixed4 _Color; // not really used (ColorMask 0)
+            fixed4 _Color;
 
             struct appdata
             {
@@ -50,7 +47,7 @@ Shader "Unlit/06_02_01_window"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                return _Color; // wonÅft be drawn because ColorMask 0
+                return _Color;
             }
             ENDCG
         }
