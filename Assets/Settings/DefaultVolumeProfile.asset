@@ -13,13 +13,17 @@ MonoBehaviour:
   m_Name: LiftGammaGain
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   lift:
+    <debugId>k__BackingField: lift
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0}
   gamma:
+    <debugId>k__BackingField: gamma
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0}
   gain:
+    <debugId>k__BackingField: gain
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0}
 --- !u!114 &-8270506406425502121
@@ -35,13 +39,25 @@ MonoBehaviour:
   m_Name: SplitToning
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   shadows:
+    <debugId>k__BackingField: shadows
     m_OverrideState: 1
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    m_Value:
+      r: 0.5
+      g: 0.5
+      b: 0.5
+      a: 1
   highlights:
+    <debugId>k__BackingField: highlights
     m_OverrideState: 1
-    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    m_Value:
+      r: 0.5
+      g: 0.5
+      b: 0.5
+      a: 1
   balance:
+    <debugId>k__BackingField: balance
     m_OverrideState: 1
     m_Value: 0
 --- !u!114 &-8104416584915340131
@@ -95,16 +111,21 @@ MonoBehaviour:
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   mode:
+    <debugId>k__BackingField: mode
     m_OverrideState: 1
     m_Value: 0
   quality:
+    <debugId>k__BackingField: quality
     m_OverrideState: 1
     m_Value: 0
   intensity:
+    <debugId>k__BackingField: intensity
     m_OverrideState: 1
     m_Value: 0
   clamp:
+    <debugId>k__BackingField: clamp
     m_OverrideState: 1
     m_Value: 0.05
 --- !u!114 &-7274224791359825572
@@ -159,19 +180,29 @@ MonoBehaviour:
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   postExposure:
+    <debugId>k__BackingField: postExposure
     m_OverrideState: 1
     m_Value: 0
   contrast:
+    <debugId>k__BackingField: contrast
     m_OverrideState: 1
     m_Value: 0
   colorFilter:
+    <debugId>k__BackingField: colorFilter
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
   hueShift:
+    <debugId>k__BackingField: hueShift
     m_OverrideState: 1
     m_Value: 0
   saturation:
+    <debugId>k__BackingField: saturation
     m_OverrideState: 1
     m_Value: 0
 --- !u!114 &-6288072647309666549
@@ -187,16 +218,21 @@ MonoBehaviour:
   m_Name: FilmGrain
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   type:
+    <debugId>k__BackingField: type
     m_OverrideState: 1
     m_Value: 0
   intensity:
+    <debugId>k__BackingField: intensity
     m_OverrideState: 1
     m_Value: 0
   response:
+    <debugId>k__BackingField: response
     m_OverrideState: 1
     m_Value: 0.8
   texture:
+    <debugId>k__BackingField: texture
     m_OverrideState: 1
     m_Value: {fileID: 0}
 --- !u!114 &-5520245016509672950
@@ -212,31 +248,41 @@ MonoBehaviour:
   m_Name: Tonemapping
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   mode:
+    <debugId>k__BackingField: mode
     m_OverrideState: 1
     m_Value: 0
   neutralHDRRangeReductionMode:
+    <debugId>k__BackingField: neutralHDRRangeReductionMode
     m_OverrideState: 1
     m_Value: 2
   acesPreset:
+    <debugId>k__BackingField: acesPreset
     m_OverrideState: 1
     m_Value: 3
   hueShiftAmount:
+    <debugId>k__BackingField: hueShiftAmount
     m_OverrideState: 1
     m_Value: 0
   detectPaperWhite:
+    <debugId>k__BackingField: detectPaperWhite
     m_OverrideState: 1
     m_Value: 0
   paperWhite:
+    <debugId>k__BackingField: paperWhite
     m_OverrideState: 1
     m_Value: 300
   detectBrightnessLimits:
+    <debugId>k__BackingField: detectBrightnessLimits
     m_OverrideState: 1
     m_Value: 1
   minNits:
+    <debugId>k__BackingField: minNits
     m_OverrideState: 1
     m_Value: 0.005
   maxNits:
+    <debugId>k__BackingField: maxNits
     m_OverrideState: 1
     m_Value: 1000
 --- !u!114 &-5360449096862653589
@@ -293,10 +339,13 @@ MonoBehaviour:
   m_Name: PaniniProjection
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   distance:
+    <debugId>k__BackingField: distance
     m_OverrideState: 1
     m_Value: 0
   cropToFit:
+    <debugId>k__BackingField: cropToFit
     m_OverrideState: 1
     m_Value: 1
 --- !u!114 &-1410297666881709256
@@ -312,36 +361,51 @@ MonoBehaviour:
   m_Name: ProbeVolumesOptions
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: Adaptive Probe Volumes Options
   normalBias:
+    <debugId>k__BackingField: normalBias
     m_OverrideState: 1
     m_Value: 0.33
   viewBias:
+    <debugId>k__BackingField: viewBias
     m_OverrideState: 1
     m_Value: 0
   scaleBiasWithMinProbeDistance:
+    <debugId>k__BackingField: scaleBiasWithMinProbeDistance
     m_OverrideState: 1
     m_Value: 0
   samplingNoise:
+    <debugId>k__BackingField: samplingNoise
     m_OverrideState: 1
     m_Value: 0.1
   animateSamplingNoise:
+    <debugId>k__BackingField: animateSamplingNoise
     m_OverrideState: 1
     m_Value: 1
   leakReductionMode:
+    <debugId>k__BackingField: leakReductionMode
     m_OverrideState: 1
     m_Value: 1
   minValidDotProductValue:
+    <debugId>k__BackingField: minValidDotProductValue
     m_OverrideState: 1
     m_Value: 0.1
   occlusionOnlyReflectionNormalization:
+    <debugId>k__BackingField: occlusionOnlyReflectionNormalization
     m_OverrideState: 1
     m_Value: 1
   intensityMultiplier:
+    <debugId>k__BackingField: intensityMultiplier
     m_OverrideState: 1
     m_Value: 1
   skyOcclusionIntensityMultiplier:
+    <debugId>k__BackingField: skyOcclusionIntensityMultiplier
     m_OverrideState: 1
     m_Value: 1
+  worldOffset:
+    <debugId>k__BackingField: worldOffset
+    m_OverrideState: 1
+    m_Value: {x: 0, y: 0, z: 0}
 --- !u!114 &-1216621516061285780
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -355,38 +419,54 @@ MonoBehaviour:
   m_Name: Bloom
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   skipIterations:
+    <debugId>k__BackingField: skipIterations
     m_OverrideState: 1
     m_Value: 1
   threshold:
+    <debugId>k__BackingField: threshold
     m_OverrideState: 1
     m_Value: 0.9
   intensity:
+    <debugId>k__BackingField: intensity
     m_OverrideState: 1
     m_Value: 0
   scatter:
+    <debugId>k__BackingField: scatter
     m_OverrideState: 1
     m_Value: 0.7
   clamp:
+    <debugId>k__BackingField: clamp
     m_OverrideState: 1
     m_Value: 65472
   tint:
+    <debugId>k__BackingField: tint
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
   highQualityFiltering:
+    <debugId>k__BackingField: highQualityFiltering
     m_OverrideState: 1
     m_Value: 0
   downscale:
+    <debugId>k__BackingField: downscale
     m_OverrideState: 1
     m_Value: 0
   maxIterations:
+    <debugId>k__BackingField: maxIterations
     m_OverrideState: 1
     m_Value: 6
   dirtTexture:
+    <debugId>k__BackingField: dirtTexture
     m_OverrideState: 1
     m_Value: {fileID: 0}
     dimension: 1
   dirtIntensity:
+    <debugId>k__BackingField: dirtIntensity
     m_OverrideState: 1
     m_Value: 0
 --- !u!114 &-1170528603972255243
@@ -402,10 +482,13 @@ MonoBehaviour:
   m_Name: WhiteBalance
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   temperature:
+    <debugId>k__BackingField: temperature
     m_OverrideState: 1
     m_Value: 0
   tint:
+    <debugId>k__BackingField: tint
     m_OverrideState: 1
     m_Value: 0
 --- !u!114 &-581120513425526550
@@ -462,8 +545,6 @@ MonoBehaviour:
   - {fileID: -6288072647309666549}
   - {fileID: 7518938298396184218}
   - {fileID: -1410297666881709256}
-  - {fileID: -7750755424749557576}
-  - {fileID: -5139089513906902183}
 --- !u!114 &853819529557874667
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -477,58 +558,81 @@ MonoBehaviour:
   m_Name: ScreenSpaceLensFlare
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: Screen Space Lens Flare
   intensity:
+    <debugId>k__BackingField: intensity
     m_OverrideState: 1
     m_Value: 0
   tintColor:
+    <debugId>k__BackingField: tintColor
     m_OverrideState: 1
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
   bloomMip:
+    <debugId>k__BackingField: bloomMip
     m_OverrideState: 1
     m_Value: 1
   firstFlareIntensity:
+    <debugId>k__BackingField: firstFlareIntensity
     m_OverrideState: 1
     m_Value: 1
   secondaryFlareIntensity:
+    <debugId>k__BackingField: secondaryFlareIntensity
     m_OverrideState: 1
     m_Value: 1
   warpedFlareIntensity:
+    <debugId>k__BackingField: warpedFlareIntensity
     m_OverrideState: 1
     m_Value: 1
   warpedFlareScale:
+    <debugId>k__BackingField: warpedFlareScale
     m_OverrideState: 1
     m_Value: {x: 1, y: 1}
   samples:
+    <debugId>k__BackingField: samples
     m_OverrideState: 1
     m_Value: 1
   sampleDimmer:
+    <debugId>k__BackingField: sampleDimmer
     m_OverrideState: 1
     m_Value: 0.5
   vignetteEffect:
+    <debugId>k__BackingField: vignetteEffect
     m_OverrideState: 1
     m_Value: 1
   startingPosition:
+    <debugId>k__BackingField: startingPosition
     m_OverrideState: 1
     m_Value: 1.25
   scale:
+    <debugId>k__BackingField: scale
     m_OverrideState: 1
     m_Value: 1.5
   streaksIntensity:
+    <debugId>k__BackingField: streaksIntensity
     m_OverrideState: 1
     m_Value: 0
   streaksLength:
+    <debugId>k__BackingField: streaksLength
     m_OverrideState: 1
     m_Value: 0.5
   streaksOrientation:
+    <debugId>k__BackingField: streaksOrientation
     m_OverrideState: 1
     m_Value: 0
   streaksThreshold:
+    <debugId>k__BackingField: streaksThreshold
     m_OverrideState: 1
     m_Value: 0.25
   resolution:
+    <debugId>k__BackingField: resolution
     m_OverrideState: 1
     m_Value: 4
   chromaticAbberationIntensity:
+    <debugId>k__BackingField: chromaticAbberationIntensity
     m_OverrideState: 1
     m_Value: 0.5
 --- !u!114 &1052315754049611418
@@ -544,25 +648,33 @@ MonoBehaviour:
   m_Name: ShadowsMidtonesHighlights
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   shadows:
+    <debugId>k__BackingField: shadows
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0}
   midtones:
+    <debugId>k__BackingField: midtones
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0}
   highlights:
+    <debugId>k__BackingField: highlights
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0}
   shadowsStart:
+    <debugId>k__BackingField: shadowsStart
     m_OverrideState: 1
     m_Value: 0
   shadowsEnd:
+    <debugId>k__BackingField: shadowsEnd
     m_OverrideState: 1
     m_Value: 0.3
   highlightsStart:
+    <debugId>k__BackingField: highlightsStart
     m_OverrideState: 1
     m_Value: 0.55
   highlightsEnd:
+    <debugId>k__BackingField: highlightsEnd
     m_OverrideState: 1
     m_Value: 1
 --- !u!114 &1666464333004379222
@@ -578,7 +690,9 @@ MonoBehaviour:
   m_Name: ColorCurves
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   master:
+    <debugId>k__BackingField: master
     m_OverrideState: 1
     m_Value:
       <length>k__BackingField: 2
@@ -586,10 +700,8 @@ MonoBehaviour:
       m_ZeroValue: 0
       m_Range: 1
       m_Curve:
-        serializedVersion: 2
         m_Curve:
-        - serializedVersion: 3
-          time: 0
+        - time: 0
           value: 0
           inSlope: 1
           outSlope: 1
@@ -597,8 +709,7 @@ MonoBehaviour:
           weightedMode: 0
           inWeight: 0
           outWeight: 0
-        - serializedVersion: 3
-          time: 1
+        - time: 1
           value: 1
           inSlope: 1
           outSlope: 1
@@ -609,7 +720,16 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+      m_LoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_Texture: {fileID: 0}
+      m_IsCurveDirty: 1
+      m_IsTextureDirty: 0
   red:
+    <debugId>k__BackingField: red
     m_OverrideState: 1
     m_Value:
       <length>k__BackingField: 2
@@ -617,10 +737,8 @@ MonoBehaviour:
       m_ZeroValue: 0
       m_Range: 1
       m_Curve:
-        serializedVersion: 2
         m_Curve:
-        - serializedVersion: 3
-          time: 0
+        - time: 0
           value: 0
           inSlope: 1
           outSlope: 1
@@ -628,8 +746,7 @@ MonoBehaviour:
           weightedMode: 0
           inWeight: 0
           outWeight: 0
-        - serializedVersion: 3
-          time: 1
+        - time: 1
           value: 1
           inSlope: 1
           outSlope: 1
@@ -640,7 +757,16 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+      m_LoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_Texture: {fileID: 0}
+      m_IsCurveDirty: 1
+      m_IsTextureDirty: 0
   green:
+    <debugId>k__BackingField: green
     m_OverrideState: 1
     m_Value:
       <length>k__BackingField: 2
@@ -648,10 +774,8 @@ MonoBehaviour:
       m_ZeroValue: 0
       m_Range: 1
       m_Curve:
-        serializedVersion: 2
         m_Curve:
-        - serializedVersion: 3
-          time: 0
+        - time: 0
           value: 0
           inSlope: 1
           outSlope: 1
@@ -659,8 +783,7 @@ MonoBehaviour:
           weightedMode: 0
           inWeight: 0
           outWeight: 0
-        - serializedVersion: 3
-          time: 1
+        - time: 1
           value: 1
           inSlope: 1
           outSlope: 1
@@ -671,7 +794,16 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+      m_LoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_Texture: {fileID: 0}
+      m_IsCurveDirty: 1
+      m_IsTextureDirty: 0
   blue:
+    <debugId>k__BackingField: blue
     m_OverrideState: 1
     m_Value:
       <length>k__BackingField: 2
@@ -679,10 +811,8 @@ MonoBehaviour:
       m_ZeroValue: 0
       m_Range: 1
       m_Curve:
-        serializedVersion: 2
         m_Curve:
-        - serializedVersion: 3
-          time: 0
+        - time: 0
           value: 0
           inSlope: 1
           outSlope: 1
@@ -690,8 +820,7 @@ MonoBehaviour:
           weightedMode: 0
           inWeight: 0
           outWeight: 0
-        - serializedVersion: 3
-          time: 1
+        - time: 1
           value: 1
           inSlope: 1
           outSlope: 1
@@ -702,7 +831,16 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+      m_LoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_Texture: {fileID: 0}
+      m_IsCurveDirty: 1
+      m_IsTextureDirty: 0
   hueVsHue:
+    <debugId>k__BackingField: hueVsHue
     m_OverrideState: 1
     m_Value:
       <length>k__BackingField: 0
@@ -710,12 +848,20 @@ MonoBehaviour:
       m_ZeroValue: 0.5
       m_Range: 1
       m_Curve:
-        serializedVersion: 2
         m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+      m_LoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_Texture: {fileID: 0}
+      m_IsCurveDirty: 1
+      m_IsTextureDirty: 0
   hueVsSat:
+    <debugId>k__BackingField: hueVsSat
     m_OverrideState: 1
     m_Value:
       <length>k__BackingField: 0
@@ -723,12 +869,20 @@ MonoBehaviour:
       m_ZeroValue: 0.5
       m_Range: 1
       m_Curve:
-        serializedVersion: 2
         m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+      m_LoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_Texture: {fileID: 0}
+      m_IsCurveDirty: 1
+      m_IsTextureDirty: 0
   satVsSat:
+    <debugId>k__BackingField: satVsSat
     m_OverrideState: 1
     m_Value:
       <length>k__BackingField: 0
@@ -736,12 +890,20 @@ MonoBehaviour:
       m_ZeroValue: 0.5
       m_Range: 1
       m_Curve:
-        serializedVersion: 2
         m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+      m_LoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_Texture: {fileID: 0}
+      m_IsCurveDirty: 1
+      m_IsTextureDirty: 0
   lumVsSat:
+    <debugId>k__BackingField: lumVsSat
     m_OverrideState: 1
     m_Value:
       <length>k__BackingField: 0
@@ -749,11 +911,18 @@ MonoBehaviour:
       m_ZeroValue: 0.5
       m_Range: 1
       m_Curve:
-        serializedVersion: 2
         m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+      m_LoopingCurve:
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_Texture: {fileID: 0}
+      m_IsCurveDirty: 1
+      m_IsTextureDirty: 0
 --- !u!114 &1918650496244738858
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -767,11 +936,14 @@ MonoBehaviour:
   m_Name: ColorLookup
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   texture:
+    <debugId>k__BackingField: texture
     m_OverrideState: 1
     m_Value: {fileID: 0}
     dimension: 1
   contribution:
+    <debugId>k__BackingField: contribution
     m_OverrideState: 1
     m_Value: 0
 --- !u!114 &3959858460715838825
@@ -787,37 +959,49 @@ MonoBehaviour:
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   mode:
+    <debugId>k__BackingField: mode
     m_OverrideState: 1
     m_Value: 0
   gaussianStart:
+    <debugId>k__BackingField: gaussianStart
     m_OverrideState: 1
     m_Value: 10
   gaussianEnd:
+    <debugId>k__BackingField: gaussianEnd
     m_OverrideState: 1
     m_Value: 30
   gaussianMaxRadius:
+    <debugId>k__BackingField: gaussianMaxRadius
     m_OverrideState: 1
     m_Value: 1
   highQualitySampling:
+    <debugId>k__BackingField: highQualitySampling
     m_OverrideState: 1
     m_Value: 0
   focusDistance:
+    <debugId>k__BackingField: focusDistance
     m_OverrideState: 1
     m_Value: 10
   aperture:
+    <debugId>k__BackingField: aperture
     m_OverrideState: 1
     m_Value: 5.6
   focalLength:
+    <debugId>k__BackingField: focalLength
     m_OverrideState: 1
     m_Value: 50
   bladeCount:
+    <debugId>k__BackingField: bladeCount
     m_OverrideState: 1
     m_Value: 5
   bladeCurvature:
+    <debugId>k__BackingField: bladeCurvature
     m_OverrideState: 1
     m_Value: 1
   bladeRotation:
+    <debugId>k__BackingField: bladeRotation
     m_OverrideState: 1
     m_Value: 0
 --- !u!114 &4251301726029935498
@@ -849,7 +1033,9 @@ MonoBehaviour:
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   intensity:
+    <debugId>k__BackingField: intensity
     m_OverrideState: 1
     m_Value: 0
 --- !u!114 &6940869943325143175
@@ -878,19 +1064,29 @@ MonoBehaviour:
   m_Name: Vignette
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   color:
+    <debugId>k__BackingField: color
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_Value:
+      r: 0
+      g: 0
+      b: 0
+      a: 1
   center:
+    <debugId>k__BackingField: center
     m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
   intensity:
+    <debugId>k__BackingField: intensity
     m_OverrideState: 1
     m_Value: 0
   smoothness:
+    <debugId>k__BackingField: smoothness
     m_OverrideState: 1
     m_Value: 0.2
   rounded:
+    <debugId>k__BackingField: rounded
     m_OverrideState: 1
     m_Value: 0
 --- !u!114 &7518938298396184218
@@ -906,19 +1102,25 @@ MonoBehaviour:
   m_Name: LensDistortion
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   intensity:
+    <debugId>k__BackingField: intensity
     m_OverrideState: 1
     m_Value: 0
   xMultiplier:
+    <debugId>k__BackingField: xMultiplier
     m_OverrideState: 1
     m_Value: 1
   yMultiplier:
+    <debugId>k__BackingField: yMultiplier
     m_OverrideState: 1
     m_Value: 1
   center:
+    <debugId>k__BackingField: center
     m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
   scale:
+    <debugId>k__BackingField: scale
     m_OverrideState: 1
     m_Value: 1
 --- !u!114 &9001657382290151224
@@ -934,31 +1136,41 @@ MonoBehaviour:
   m_Name: ChannelMixer
   m_EditorClassIdentifier: 
   active: 1
+  <displayName>k__BackingField: 
   redOutRedIn:
+    <debugId>k__BackingField: redOutRedIn
     m_OverrideState: 1
     m_Value: 100
   redOutGreenIn:
+    <debugId>k__BackingField: redOutGreenIn
     m_OverrideState: 1
     m_Value: 0
   redOutBlueIn:
+    <debugId>k__BackingField: redOutBlueIn
     m_OverrideState: 1
     m_Value: 0
   greenOutRedIn:
+    <debugId>k__BackingField: greenOutRedIn
     m_OverrideState: 1
     m_Value: 0
   greenOutGreenIn:
+    <debugId>k__BackingField: greenOutGreenIn
     m_OverrideState: 1
     m_Value: 100
   greenOutBlueIn:
+    <debugId>k__BackingField: greenOutBlueIn
     m_OverrideState: 1
     m_Value: 0
   blueOutRedIn:
+    <debugId>k__BackingField: blueOutRedIn
     m_OverrideState: 1
     m_Value: 0
   blueOutGreenIn:
+    <debugId>k__BackingField: blueOutGreenIn
     m_OverrideState: 1
     m_Value: 0
   blueOutBlueIn:
+    <debugId>k__BackingField: blueOutBlueIn
     m_OverrideState: 1
     m_Value: 100
 --- !u!114 &9122958982931076880
