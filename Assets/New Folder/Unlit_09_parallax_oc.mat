@@ -34,8 +34,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _Parallax: 0.1
-    - _ParallaxDeep: 0.088
-    - _ParallaxShallow: 0.024
+    - _ParallaxDeep: 0.284
+    - _ParallaxShallow: 0.132
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
