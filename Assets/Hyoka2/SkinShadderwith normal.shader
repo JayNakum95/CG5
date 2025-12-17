@@ -1,4 +1,4 @@
-﻿Shader "Unlit/normalMapwithSpecular"
+Shader "Unlit/SkinShadderwith normal"
 {
     Properties
     {
@@ -7,13 +7,20 @@
         _UseTexture ("Texture Blend", Range(0,1)) = 1
 
         _NormalTex  ("Normal Map", 2D) = "bump" {}
+        _NormalIntensity ("Normal Intensity", Range(0,2)) = 1
 
-        _Metallic   ("Metallic", Range(0,1)) = 1
-        _Smoothness ("Smoothness", Range(0,1)) = 0.8
-        _SpecPower  ("Specular Power", Range(4,128)) = 32
+        // For skin: keep Metallic at 0 in the material
+        _Metallic   ("Metallic (keep 0 for skin)", Range(0,1)) = 0
+
+        // Roughness is easier to think for skin
+        _Roughness  ("Roughness", Range(0,1)) = 0.6
+
+        // Spec color tint (skin spec is slightly colored, not pure white)
+        _SpecTint   ("Spec Tint", Color) = (1, 0.92, 0.85, 1)
+        _SpecPower  ("Spec Power Max", Range(4,128)) = 64
 
         _EnvCube    ("Reflection Cubemap", CUBE) = "" {}
-        _EnvIntensity ("Reflection Intensity", Range(0,1)) = 0.5
+        _EnvIntensity ("Reflection Intensity", Range(0,1)) = 0.2
     }
 
     SubShader
@@ -45,7 +52,6 @@
                 float2 uv       : TEXCOORD0;
                 float3 worldPos : TEXCOORD1;
 
-                // World-space TBN basis
                 float3 t : TEXCOORD2;
                 float3 b : TEXCOORD3;
                 float3 n : TEXCOORD4;
@@ -59,76 +65,80 @@
             fixed4 _BaseColor;
             float  _UseTexture;
 
+            float  _NormalIntensity;
+
             float  _Metallic;
-            float  _Smoothness;
+            float  _Roughness;
+
+            fixed4 _SpecTint;
             float  _SpecPower;
 
             samplerCUBE _EnvCube;
             float  _EnvIntensity;
 
-            v2f vert (appdata v)
+            v2f vert(appdata v)
             {
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.vertex);
                 o.uv  = TRANSFORM_TEX(v.uv, _MainTex);
-
                 o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
 
-                // Correct world normal & tangent
-                float3 n = UnityObjectToWorldNormal(v.normal);
-                float3 t = UnityObjectToWorldDir(v.tangent.xyz);
+                float3 n = normalize(UnityObjectToWorldNormal(v.normal));
+                float3 t = normalize(UnityObjectToWorldDir(v.tangent.xyz));
 
-                n = normalize(n);
-                t = normalize(t);
-
-                // IMPORTANT: handle mirrored UVs + negative scaling with tangent sign
                 float tangentSign = v.tangent.w * unity_WorldTransformParams.w;
                 float3 b = normalize(cross(n, t) * tangentSign);
 
-                o.n = n;
-                o.t = t;
-                o.b = b;
-
+                o.n = n; o.t = t; o.b = b;
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target
+            fixed4 frag(v2f i) : SV_Target
             {
                 fixed3 texCol  = tex2D(_MainTex, i.uv).rgb;
                 fixed3 baseCol = _BaseColor.rgb;
+                fixed3 albedo  = lerp(baseCol, texCol, _UseTexture);
 
-                fixed3 albedo = lerp(baseCol, texCol, _UseTexture);
-
-                // ✅ Unity-correct normal unpacking
+                // --- Normal (Unity-correct) ---
                 float3 nTS = UnpackNormal(tex2D(_NormalTex, i.uv));
+
+                // Normal intensity: scale XY and re-normalize
+                nTS.xy *= _NormalIntensity;
+                nTS = normalize(nTS);
+
                 float3 nWS = normalize(i.t * nTS.x + i.b * nTS.y + i.n * nTS.z);
 
-                // Light dir (directional vs point)
+                // --- Lighting vectors ---
                 float3 lightDir = (_WorldSpaceLightPos0.w == 0)
                     ? normalize(_WorldSpaceLightPos0.xyz)
                     : normalize(_WorldSpaceLightPos0.xyz - i.worldPos);
 
+                float3 viewDir = normalize(_WorldSpaceCameraPos - i.worldPos);
+
                 float NdotL = saturate(dot(nWS, lightDir));
 
-                // Diffuse reduced by metallic
+                // Diffuse (skin is not metallic)
                 fixed3 diffuse = albedo * (1.0 - _Metallic) * _LightColor0.rgb * NdotL;
 
-                // View + half vector
-                float3 viewDir = normalize(_WorldSpaceCameraPos - i.worldPos);
+                // --- Specular (roughness -> wider highlight) ---
                 float3 halfDir = normalize(lightDir + viewDir);
                 float  NdotH   = saturate(dot(nWS, halfDir));
 
-                // Spec color: metallic pulls spec toward albedo
-                fixed3 specColor = lerp(fixed3(0.04,0.04,0.04), albedo, _Metallic);
+                // Convert roughness -> smoothness -> shininess feel
+                float smoothness = 1.0 - _Roughness;
 
-                // Smoothness -> shininess mapping
-                float shininess = lerp(4.0, _SpecPower, _Smoothness);
+                // Use smoother highlight at low roughness, wider at high roughness
+                float shininess = lerp(4.0, _SpecPower, smoothness);
+
+                // Spec base: for dielectrics ~0.04, tint for skin
+                fixed3 specColor = lerp(fixed3(0.04,0.04,0.04), _SpecTint.rgb, 0.75);
+
                 fixed3 spec = specColor * pow(NdotH, shininess) * _LightColor0.rgb;
 
-                // Cubemap reflection (simple)
+                // --- Simple reflection (keep low for skin) ---
                 float3 reflDir = reflect(-viewDir, nWS);
                 fixed3 env = texCUBE(_EnvCube, reflDir).rgb;
-                fixed3 envTerm = env * _EnvIntensity * _Metallic;
+                fixed3 envTerm = env * _EnvIntensity * smoothness * (1.0 - _Roughness);
 
                 fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.rgb * albedo;
 
@@ -141,5 +151,4 @@
 
     FallBack "Diffuse"
 }
-
 
