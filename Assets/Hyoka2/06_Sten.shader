@@ -2,8 +2,8 @@ Shader "Unlit/06_Sten"
 {
     Properties
     {
-        _FrontColor ("Color (Not Occluded)", Color) = (1,0,0,1)   /
-        _HiddenColor("Color (Through Occluder)", Color) = (0,1,0,1) /
+        _FrontColor ("Color (Not Occluded)", Color) = (1,0,0,1)   
+        _HiddenColor("Color (Through Occluder)", Color) = (0,1,0,1) 
     }
 
     SubShader
