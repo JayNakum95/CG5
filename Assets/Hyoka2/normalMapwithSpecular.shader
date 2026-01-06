@@ -81,7 +81,6 @@
                 n = normalize(n);
                 t = normalize(t);
 
-                // IMPORTANT: handle mirrored UVs + negative scaling with tangent sign
                 float tangentSign = v.tangent.w * unity_WorldTransformParams.w;
                 float3 b = normalize(cross(n, t) * tangentSign);
 
@@ -99,11 +98,9 @@
 
                 fixed3 albedo = lerp(baseCol, texCol, _UseTexture);
 
-                // ✅ Unity-correct normal unpacking
                 float3 nTS = UnpackNormal(tex2D(_NormalTex, i.uv));
                 float3 nWS = normalize(i.t * nTS.x + i.b * nTS.y + i.n * nTS.z);
 
-                // Light dir (directional vs point)
                 float3 lightDir = (_WorldSpaceLightPos0.w == 0)
                     ? normalize(_WorldSpaceLightPos0.xyz)
                     : normalize(_WorldSpaceLightPos0.xyz - i.worldPos);

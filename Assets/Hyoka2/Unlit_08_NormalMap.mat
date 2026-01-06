@@ -33,9 +33,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Gloss: 30.7
+    - _Gloss: 7.4
     m_Colors:
-    - _SpecCol: {r: 0.6603774, g: 0.2761955, b: 0.2761955, a: 1}
+    - _SpecCol: {r: 0.8050314, g: 0.29112756, b: 0.29112756, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

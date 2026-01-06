@@ -11,12 +11,11 @@ Shader "Unlit/06_Occludar"
 
         Pass
         {
-            // ステンシルに 1 を書き込む
             Stencil
             {
-                Ref 1        // 書き込む値
-                Comp always  // 常に
-                Pass replace // 1を書き込む
+                Ref 1        
+                Comp always  
+                Pass replace 
             }
 
             CGPROGRAM
