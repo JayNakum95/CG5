@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PostEffectRenderFeature
   m_EditorClassIdentifier: Assembly-CSharp::PostEffectRenderFeature
   m_Active: 1
-  postEffectMaterial_: {fileID: 2100000, guid: 469a45a3f74c297458f1759c1aafcbdc, type: 2}
+  postEffectMaterial_: {fileID: 2100000, guid: 1fce5758c86f4e1428c9881d2d774282, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

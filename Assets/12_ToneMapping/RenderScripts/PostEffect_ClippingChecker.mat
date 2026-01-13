@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PostEffect_ToneCorrection
-  m_Shader: {fileID: 4800000, guid: 7e2af0866bec21f4baf612cc9c141c5e, type: 3}
+  m_Name: PostEffect_ClippingChecker
+  m_Shader: {fileID: 4800000, guid: e789ef4d3765db24fbc01099f24a3571, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,10 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats:
-    - _Saturation: 0
-    - contrast: 1
-    - saturation: 1
+    m_Floats: []
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

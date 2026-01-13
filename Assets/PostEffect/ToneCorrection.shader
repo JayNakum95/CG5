@@ -2,12 +2,13 @@ Shader "PostEffect/ToneCorrection"
 {
     Properties
     {
-        _Saturation ("彩度", Range(0,1)) = 1
+        saturation ("彩度", Range(0,1)) = 1
+        contrast   ("コントラスト", Range(0,2)) = 1
     }
 
     SubShader
     {
-        Tags { "RenderPipeline" = "UniversalPipeline" }
+        Tags { "RenderPipeline"="UniversalPipeline" }
 
         Pass
         {
@@ -23,14 +24,18 @@ Shader "PostEffect/ToneCorrection"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.core/Runtime/Utilities/Blit.hlsl"
 
+            // Properties → HLSL に渡す（URPで重要）
             CBUFFER_START(UnityPerMaterial)
-                half _Saturation;
+                half saturation;
+                half contrast;
             CBUFFER_END
 
             half4 Frag(Varyings input) : SV_Target
             {
-                half4 output = SAMPLE_TEXTURE2D(_BlitTexture, sampler_LinearRepeat, input.texcoord);
+                half4 output =
+                    SAMPLE_TEXTURE2D(_BlitTexture, sampler_LinearRepeat, input.texcoord);
 
+                // grayscale
                 half grayscale =
                     0.2126 * output.r +
                     0.7152 * output.g +
@@ -38,8 +43,11 @@ Shader "PostEffect/ToneCorrection"
 
                 half4 monochromeColor = half4(grayscale, grayscale, grayscale, 1);
 
-                // 彩度: 0=モノクロ, 1=元の色
-                half4 outputColor = lerp(monochromeColor, output, _Saturation);
+                // 彩度
+                half4 outputColor = lerp(monochromeColor, output, saturation);
+
+                // コントラスト（※RGBだけ）
+                outputColor.rgb = (outputColor.rgb - 0.5) * contrast + 0.5;
 
                 return outputColor;
             }
