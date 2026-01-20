@@ -73,6 +73,7 @@ Shader "PostEffect/PE_ToneMapping"
                     input.texcoord
                 );
 
+
                // half lIn = GetLuminance(output.rgb);
                // half lOut = ReinHard(lIn);
                // half4 outputColor = output * lOut / max(lIn, 0.001);
