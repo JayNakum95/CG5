@@ -12,8 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a8aba8d5386c047a769be0e4720b42, type: 3}
   m_Name: ClippingCheckRenderFeature
   m_EditorClassIdentifier: Assembly-CSharp::ClippingCheckRenderFeature
+  m_Active: 0
+  postEffectMaterial_: {fileID: 2100000, guid: d68e8f0387c2f594ca67900f5d7fe1ea, type: 2}
+--- !u!114 &-34736473310629541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7726e0445d9a6ff479d043739bd3e50d, type: 3}
+  m_Name: PostEffectRenderFeature
+  m_EditorClassIdentifier: Assembly-CSharp::PostEffectRenderFeature
   m_Active: 1
-  postEffectMaterial_: {fileID: 2100000, guid: f0a641dc5b0b03e4c988542dc8c0a11b, type: 2}
+  blurMaterial_: {fileID: 2100000, guid: d68e8f0387c2f594ca67900f5d7fe1ea, type: 2}
+  passThroughMaterial_: {fileID: 2100000, guid: 8dee120badf8df64b8c38ef256088f42, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,7 +57,8 @@ MonoBehaviour:
   - {fileID: 7833122117494664109}
   - {fileID: 7984303211281471990}
   - {fileID: -7541650367148544885}
-  m_RendererFeatureMap: ad6b866f10d7b46cf65971cf77f1cd6e8baceacdf2ac5697
+  - {fileID: -34736473310629541}
+  m_RendererFeatureMap: ad6b866f10d7b46cf65971cf77f1cd6e8baceacdf2ac56975bf1918f5c9784ff
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 0}
@@ -83,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62c9c65cf3354c93be831c8bc075510, type: 3}
   m_Name: ScreenSpaceAmbientOcclusion
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   m_Settings:
     AOMethod: 0
     Downsample: 0
@@ -109,5 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd5daa2ba40c464188bdd723d8f4d0c, type: 3}
   m_Name: ToneMappingRenderFeature
   m_EditorClassIdentifier: Assembly-CSharp::ToneMappingRenderFeature
-  m_Active: 1
-  postEffectMaterial_: {fileID: 0}
+  m_Active: 0
+  postEffectMaterial_: {fileID: 2100000, guid: ea74ff7e82bde0e4a828facfddca7f7e, type: 2}
