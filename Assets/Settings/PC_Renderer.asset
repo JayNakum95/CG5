@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a8aba8d5386c047a769be0e4720b42, type: 3}
   m_Name: ClippingCheckRenderFeature
   m_EditorClassIdentifier: Assembly-CSharp::ClippingCheckRenderFeature
-  m_Active: 0
-  postEffectMaterial_: {fileID: 2100000, guid: d68e8f0387c2f594ca67900f5d7fe1ea, type: 2}
+  m_Active: 1
+  postEffectMaterial_: {fileID: 2100000, guid: f71c0e06f7f3e31418aedbc4685bb705, type: 2}
 --- !u!114 &-34736473310629541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   m_Name: PostEffectRenderFeature
   m_EditorClassIdentifier: Assembly-CSharp::PostEffectRenderFeature
   m_Active: 1
-  blurMaterial_: {fileID: 2100000, guid: d68e8f0387c2f594ca67900f5d7fe1ea, type: 2}
+  blurMaterial_: {fileID: 2100000, guid: f71c0e06f7f3e31418aedbc4685bb705, type: 2}
   passThroughMaterial_: {fileID: 2100000, guid: 8dee120badf8df64b8c38ef256088f42, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
