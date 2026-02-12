@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a8aba8d5386c047a769be0e4720b42, type: 3}
   m_Name: ClippingCheckRenderFeature
   m_EditorClassIdentifier: Assembly-CSharp::ClippingCheckRenderFeature
-  m_Active: 1
+  m_Active: 0
   postEffectMaterial_: {fileID: 2100000, guid: f71c0e06f7f3e31418aedbc4685bb705, type: 2}
 --- !u!114 &-34736473310629541
 MonoBehaviour:
@@ -26,8 +26,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7726e0445d9a6ff479d043739bd3e50d, type: 3}
   m_Name: PostEffectRenderFeature
   m_EditorClassIdentifier: Assembly-CSharp::PostEffectRenderFeature
-  m_Active: 1
-  blurMaterial_: {fileID: 2100000, guid: f71c0e06f7f3e31418aedbc4685bb705, type: 2}
+  m_Active: 0
+  blurMaterial_: {fileID: 2100000, guid: d68e8f0387c2f594ca67900f5d7fe1ea, type: 2}
   passThroughMaterial_: {fileID: 2100000, guid: 8dee120badf8df64b8c38ef256088f42, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -58,7 +58,8 @@ MonoBehaviour:
   - {fileID: 7984303211281471990}
   - {fileID: -7541650367148544885}
   - {fileID: -34736473310629541}
-  m_RendererFeatureMap: ad6b866f10d7b46cf65971cf77f1cd6e8baceacdf2ac56975bf1918f5c9784ff
+  - {fileID: 8647279841008180558}
+  m_RendererFeatureMap: ad6b866f10d7b46cf65971cf77f1cd6e8baceacdf2ac56975bf1918f5c9784ff4e5db03c334f0178
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 0}
@@ -127,3 +128,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ToneMappingRenderFeature
   m_Active: 0
   postEffectMaterial_: {fileID: 2100000, guid: ea74ff7e82bde0e4a828facfddca7f7e, type: 2}
+--- !u!114 &8647279841008180558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e1ed61964197f4ea66042897df9184, type: 3}
+  m_Name: s14_BloomRenderFeature
+  m_EditorClassIdentifier: Assembly-CSharp::s14_BloomRenderFeature
+  m_Active: 1
+  settings:
+    luminanceExtractMaterial: {fileID: 2100000, guid: f71c0e06f7f3e31418aedbc4685bb705, type: 2}
+    blurMaterial: {fileID: 2100000, guid: d68e8f0387c2f594ca67900f5d7fe1ea, type: 2}
+    compositeTextureMaterial: {fileID: 2100000, guid: a53ea5c3c1adf4b4eb8e53c83b7ecf43, type: 2}
+    passEvent: 450
