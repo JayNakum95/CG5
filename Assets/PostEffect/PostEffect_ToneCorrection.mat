@@ -26,8 +26,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _Saturation: 0
-    - contrast: 1
-    - saturation: 1
+    - contrast: 1.01
+    - saturation: 0.694
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

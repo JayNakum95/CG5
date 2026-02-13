@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ClippingCheckRenderFeature
   m_EditorClassIdentifier: Assembly-CSharp::ClippingCheckRenderFeature
   m_Active: 0
-  postEffectMaterial_: {fileID: 2100000, guid: f71c0e06f7f3e31418aedbc4685bb705, type: 2}
+  postEffectMaterial_: {fileID: 2100000, guid: 1fce5758c86f4e1428c9881d2d774282, type: 2}
 --- !u!114 &-34736473310629541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26,8 +26,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7726e0445d9a6ff479d043739bd3e50d, type: 3}
   m_Name: PostEffectRenderFeature
   m_EditorClassIdentifier: Assembly-CSharp::PostEffectRenderFeature
-  m_Active: 0
-  blurMaterial_: {fileID: 2100000, guid: d68e8f0387c2f594ca67900f5d7fe1ea, type: 2}
+  m_Active: 1
+  blurMaterial_: {fileID: 2100000, guid: ea74ff7e82bde0e4a828facfddca7f7e, type: 2}
   passThroughMaterial_: {fileID: 2100000, guid: 8dee120badf8df64b8c38ef256088f42, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: ToneMappingRenderFeature
   m_EditorClassIdentifier: Assembly-CSharp::ToneMappingRenderFeature
   m_Active: 0
-  postEffectMaterial_: {fileID: 2100000, guid: ea74ff7e82bde0e4a828facfddca7f7e, type: 2}
+  postEffectMaterial_: {fileID: 2100000, guid: 1fce5758c86f4e1428c9881d2d774282, type: 2}
 --- !u!114 &8647279841008180558
 MonoBehaviour:
   m_ObjectHideFlags: 0

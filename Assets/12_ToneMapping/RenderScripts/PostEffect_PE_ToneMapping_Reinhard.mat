@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_13_02GaussianBlur
-  m_Shader: {fileID: 4800000, guid: 2d4d5c54fec4cf7449c5ad530465d006, type: 3}
+  m_Name: PostEffect_PE_ToneMapping_Reinhard
+  m_Shader: {fileID: 4800000, guid: 4c16cd1ad9edd854b8a7d6ea1080c635, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,9 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats:
-    - _Sigma: 0.00184
-    - _StepWidth: 0.001
+    m_Floats: []
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

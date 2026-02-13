@@ -2,10 +2,10 @@ Shader "Custom/13_02GaussianBlur"
 {
     Properties
     {
-        // ƒJ[ƒlƒ‹‚ÌƒsƒNƒZƒ‹‚²‚Æ‚Ì•
-        _StepWidth("ƒuƒ‰[–§“x", Range(0.001, 0.02)) = 0.05
-        // ƒKƒEƒXŠÖ”‚ÌƒVƒOƒ}‚Ì’l
-        _Sigma("ƒuƒ‰[‹­“x", Range(0, 0.01)) = 0.005
+        // ã‚«ãƒ¼ãƒãƒ«ã®ãƒ”ã‚¯ã‚»ãƒ«ã”ã¨ã®å¹…
+        _StepWidth("ãƒ–ãƒ©ãƒ¼å¯†åº¦", Range(0.001, 0.02)) = 0.05
+        // ã‚¬ã‚¦ã‚¹é–¢æ•°ã®ã‚·ã‚°ãƒã®å€¤
+        _Sigma("ãƒ–ãƒ©ãƒ¼å¼·åº¦", Range(0, 0.01)) = 0.005
     }
 
     SubShader
@@ -46,7 +46,7 @@ Shader "Custom/13_02GaussianBlur"
                 float kernelWidth = 3 * _Sigma;
                 float2 margin = _BlitTexture_TexelSize.xy / 2;
 
-                // ‰ñ”‚Å‚Í‚È‚­”ÍˆÍ‚Å“ñdƒ‹[ƒv
+                // å›æ•°ã§ã¯ãªãç¯„å›²ã§äºŒé‡ãƒ«ãƒ¼ãƒ—
                 for (float y = -kernelWidth / 2; y <= kernelWidth / 2; y += _StepWidth)
                 {
                     for (float x = -kernelWidth / 2; x <= kernelWidth / 2; x += _StepWidth)
