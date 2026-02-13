@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e1ed61964197f4ea66042897df9184, type: 3}
   m_Name: s14_BloomRenderFeature
   m_EditorClassIdentifier: Assembly-CSharp::s14_BloomRenderFeature
-  m_Active: 1
+  m_Active: 0
   settings:
     luminanceExtractMaterial: {fileID: 2100000, guid: f71c0e06f7f3e31418aedbc4685bb705, type: 2}
     blurMaterial: {fileID: 2100000, guid: d68e8f0387c2f594ca67900f5d7fe1ea, type: 2}
